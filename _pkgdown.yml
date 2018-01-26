@@ -1,0 +1,23 @@
+title: EcoCounteR
+url: https://github.com/JohannesFriedrich/EcoCounteR
+template:
+  params:
+    bootswatch: flatly
+    ganalytics: UA-84499524-2
+navbar:
+  type: inverse
+  left:
+    - icon: fa-home
+      href: index.html
+    - text: Getting Started with the R-package EcoCounteR
+      href: articles/Getting_started_with_the_R_package_EcoCounteR.html
+  right:
+    - icon: fa-newspaper-o
+      text: "news"
+      href: news/index.html
+    - icon: fa-file-code-o
+      text: "functions"
+      href: reference/index.html
+    - icon: fa-github fa-lg
+      text: "github"
+      href: https://github.com/JohannesFriedrich/EcoCounteR

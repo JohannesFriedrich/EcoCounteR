@@ -4,6 +4,14 @@ output: rmarkdown::github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# EcoCounteR - An R API wrapper for the EcoCounter project
+
+[![Build Status](https://travis-ci.org/JohannesFriedrich/EcoCounteR.svg?branch=master)](https://travis-ci.org/JohannesFriedrich/EcoCounteR)
+[![Build status](https://ci.appveyor.com/api/projects/status/l1yihruua1ugfl5a?svg=true)](https://ci.appveyor.com/project/JohannesFriedrich/ecocounter)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+
+
+
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(collapse = TRUE,
                       comment = "##",
@@ -11,7 +19,7 @@ knitr::opts_chunk$set(collapse = TRUE,
                       fig.path = "README_figs/README-")
 ```
 
-# Installation
+## Installation
 
 Until now the package is not in CRAN but you can download it via GitHub with the following command:
 
@@ -22,7 +30,7 @@ devtools::install_github("JohannesFriedrich/EcoCounteR")
 ```
 
 
-# Introduction
+## Introduction
 
 The **R**-package *EcoCounteR* is an API wrapper for data collected by https://www.eco-compteur.com. You can request available data from different Eco Counter installations by submitting the Id of the installation to different functions:
 
@@ -34,7 +42,7 @@ get_EcoCounter_data | request data from an installation  | get_EcoCounter_info(1
 
 The following chapters show some examples how to use the **R**-package *EcoCounteR*.
 
-# Request basic information from Eco Counter API <a id="basic_information"></a>
+## Request basic information from Eco Counter API <a id="basic_information"></a>
 
 First we load some needed packages. The function `get_EcoCounter_info()` will deliver some information about an installation located at Calgary in the Stephen Avenue. The only argument in `get_EcoCounter_info()` is the Id of the installation.
 
@@ -81,20 +89,20 @@ knitr::kable(
 )
 ```
 
-# Map location of an installation
+## Map location of an installation
 
 To get an overview of the installations, we can use the function `get_EcoCounter_location()`. This function extracts the coordinates from the installations. We can insert the result directly to the **R**-package `leaflet`.
 
 
 ```{r get_location}
-get_EcoCounter_location(EcoCounterIds) %>% 
+get_EcoCounter_location(EcoCounterId) %>% 
 leaflet() %>%
   addProviderTiles(providers$OpenStreetMap) %>% 
   addTiles() %>%  
   addMarkers(~long, ~lat, popup = ~htmltools::htmlEscape(name))
 ```
 
-# Request data from Eco Counter API
+## Request data from Eco Counter API
 
 Now we can use the extracted information to request data. First we load some packages which help to analyse and visualise data.
 
@@ -159,7 +167,7 @@ Stephen_Avenue_complete %>%
   top_n(1, comptage)
 ```
 
-# Visualise Data
+## Visualise Data
 
 The following examples shows the visualisation of the data.
 
