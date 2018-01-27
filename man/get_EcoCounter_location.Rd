@@ -7,11 +7,11 @@
 get_EcoCounter_location(EcoCounterId)
 }
 \arguments{
-\item{EcoCounterId}{\link{character} or \link{integer} (\strong{requiered}): Id of the EcoCounter installation}
+\item{EcoCounterId}{\link{character} or \link{integer} (\strong{required}): Id of the EcoCounter installation}
 }
 \value{
-\link{data.frame} with parsed data from EcoCounter API. Coloumns: longitude, lattitude, name. This can be used
-as input in \link[leaflet:leaflet]{leaflet::leaflet}, see example.
+\link{data.frame} with parsed data from EcoCounter API. Coloumns: longitude, lattitude, name, id and idParent.
+This can be used as input in \link[leaflet:leaflet]{leaflet::leaflet}, see example.
 }
 \description{
 Get location from an EcoCounter installation
@@ -22,7 +22,7 @@ NA
 
 \examples{
 
-EcoCounterId <- 101020207
+EcoCounterId <- 100020207
 location <- get_EcoCounter_location(EcoCounterId)
 
 \dontrun{

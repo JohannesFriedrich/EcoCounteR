@@ -1,6 +1,6 @@
 #' Get specific information from one EcoCounter installation
 #'
-#' @param EcoCounterId [character] or [integer] (**requiered**): Id of the EcoCounter installation
+#' @param EcoCounterId [character] or [integer] (**required**): Id of the EcoCounter installation
 #' @return [data.frame] with parsed data from EcoCounter API
 #'
 #' @section Function version 0.0.1
@@ -24,7 +24,7 @@ get_EcoCounter_info <- function(
   if (missing(EcoCounterId))
     stop("[get_EcoCounter_info()] Argument 'EcoCounterId' is missing", call. = FALSE)
 
-  if (!(class(unlist(EcoCounterId)) %in% c("character", "numeric")))
+  if (!(class(EcoCounterId) %in% c("character", "integer", "numeric")))
     stop("[get_EcoCounter_info()] Argument 'EcoCounterId' has to be of class numeric or character", call. = FALSE)
 
   ##=======================================##

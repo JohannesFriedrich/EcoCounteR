@@ -36,19 +36,19 @@ The **R**-package *EcoCounteR* is an API wrapper for data collected by <https://
 </thead>
 <tbody>
 <tr class="odd">
-<td>get_EcoCounter_info</td>
+<td>get_EcoCounter_info()</td>
 <td>request common information about an installation</td>
 <td>get_EcoCounter_info(100020207)</td>
 </tr>
 <tr class="even">
-<td>get_EcoCounter_location</td>
+<td>get_EcoCounter_location()</td>
 <td>request location of an installation</td>
 <td>get_EcoCounter_location(100020207)</td>
 </tr>
 <tr class="odd">
-<td>get_EcoCounter_data</td>
+<td>get_EcoCounter_data()</td>
 <td>request data from an installation</td>
-<td>get_EcoCounter_info(101020207)</td>
+<td>get_EcoCounter_data(101020207)</td>
 </tr>
 </tbody>
 </table>
@@ -288,10 +288,10 @@ Some examples:
 ## get daily saved data for the day before yesterday and yesterday
 get_EcoCounter_data(101020207)
 
-## get daily saved data from  1st January 2018 until yesterday |
+## get daily saved data from  1st January 2018 until yesterday 
 get_EcoCounter_data(101020207, from = "20180101")
 
-## get hourly saved data from  1st January 2018 to 10th January 2018 |
+## get hourly saved data from  1st January 2018 to 10th January 2018 
 get_EcoCounter_data(101020207, from = "20180101", to = "20180110", step = 3)
 ```
 
@@ -355,3 +355,31 @@ plot(g2)
 ```
 
 <img src="README_figs/README-plot_Stephen_Avenue-2.png" width="672" />
+
+A more comprehensive visualisation
+----------------------------------
+
+``` r
+Stephan_Avenue_Ped_daily <- get_EcoCounter_data(Stephan_Avenue_Ped, 
+                                                from = "20141023", 
+                                                to = "20180125") %>% 
+  mutate(weekday = wday(date, label = TRUE),
+         week = week(date),
+         monthweek = ceiling(day(date) / 7),
+         year = year(date),
+         month = month(date, label = TRUE)) %>% 
+  na.omit()
+```
+
+``` r
+ggplot(Stephan_Avenue_Ped_daily, aes(monthweek, weekday, fill = comptage)) + 
+  geom_tile(colour = "white") + 
+  facet_grid(year~month) + 
+  scale_fill_gradient(low = "yellow", high = "red") +
+  labs(x = "Week of Month",
+       y = "Day",
+       title = "Pedestrains at Stephan Avenue",
+       fill = "Pedestrains")
+```
+
+<img src="README_figs/README-heatmap_Stephan_Avenue-1.png" width="960" />

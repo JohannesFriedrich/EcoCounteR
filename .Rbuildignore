@@ -17,3 +17,5 @@ Readme\.md
 ^README\.html$
 ^README\.Rmd$
 ^README-.*\.png$
+
+^.*\.csv

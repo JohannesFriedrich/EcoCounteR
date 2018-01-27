@@ -1,0 +1,84 @@
+---
+title: "Using EcoCounteR - Example Rostock"
+author: "Johannes Friedrich"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette:
+    fig_caption: yes
+    fig_height: 7
+    fig_width: 7
+    number_sections: yes
+    toc: yes
+vignette: >
+  %\VignetteIndexEntry{Using EcoCounteR - Example Rostock}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r setup, include=FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      fig.align = "center")
+Sys.setlocale("LC_TIME", "C")
+```
+
+# Let's start !
+
+```{r, warning=FALSE, message=FALSE}
+library(EcoCounteR)
+library(leaflet)
+library(htmltools)
+library(dplyr)
+library(ggplot2)
+```
+
+
+```{r}
+Rostock <- c(100037011, 100005392, 100037010, 100034887, 100017341, 100005395, 100005394, 100005393,
+       100011605, 100037012)
+```
+
+```{r}
+info <- get_EcoCounter_info(Rostock)
+
+info
+locations <- get_EcoCounter_location(Rostock)
+```
+
+
+
+# Show installations on map
+
+```{r}
+leaflet(locations) %>%
+  addProviderTiles(providers$OpenStreetMap) %>%
+  addTiles() %>%
+  addMarkers(~long, ~lat, popup = ~htmltools::htmlEscape(name), label = ~htmltools::htmlEscape(as.character(idParent)))
+```
+
+# Load data for bicycles
+
+```{r}
+Am_Strande_IN_complete <- get_EcoCounter_data(101005395, from = "20130620", step = 4) %>% 
+  mutate(Type = "IN")
+Am_Strande_OUT_complete <- get_EcoCounter_data(102005395, from = "20130620", step = 4) %>% 
+  mutate(Type = "OUT")
+
+Am_Strande_complete <- bind_rows(Am_Strande_IN_complete, Am_Strande_OUT_complete) 
+```
+
+```{r}
+Am_Strande_monthly <- 
+Am_Strande_complete %>%
+  mutate(weekday = wday(date, label = TRUE),
+         year = year(date),
+         month = month(date, label = TRUE))
+
+ggplot(Am_Strande_monthly, aes(x = month, y = comptage, fill = Type)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  facet_wrap( ~year) +
+  theme(legend.position = "bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1)) +
+  xlab("Month") + 
+  ylab("Amount")
+```
+
+

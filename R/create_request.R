@@ -27,7 +27,7 @@ create_request <- function(
   if (missing(EcoCounterId))
     stop("[create_request()] Argument 'EcoCounterId' is missing", call. = FALSE)
 
-  if (!(class(unlist(EcoCounterId)) %in% c("character", "numeric")))
+  if (!(class(EcoCounterId) %in% c("character", "integer", "numeric")))
     stop("[create_request()] Argument 'EcoCounterId' has to be of class numeric or character", call. = FALSE)
 
   if (!is.null(query) && class(query) != "list")

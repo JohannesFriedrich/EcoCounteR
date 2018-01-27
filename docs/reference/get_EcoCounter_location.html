@@ -121,14 +121,14 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>EcoCounterId</th>
-      <td><p>character or integer (<strong>requiered</strong>): Id of the EcoCounter installation</p></td>
+      <td><p>character or integer (<strong>required</strong>): Id of the EcoCounter installation</p></td>
     </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>data.frame with parsed data from EcoCounter API. Coloumns: longitude, lattitude, name. This can be used
-as input in <a href='http://www.rdocumentation.org/packages/leaflet/topics/leaflet'>leaflet::leaflet</a>, see example.</p>
+    <p>data.frame with parsed data from EcoCounter API. Coloumns: longitude, lattitude, name, id and idParent.
+This can be used as input in <a href='http://www.rdocumentation.org/packages/leaflet/topics/leaflet'>leaflet::leaflet</a>, see example.</p>
     
     <h2 class="hasAnchor" id="function-version-"><a class="anchor" href="#function-version-"></a>Function version 0.0.1</h2>
 
@@ -137,7 +137,7 @@ as input in <a href='http://www.rdocumentation.org/packages/leaflet/topics/leafl
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='no'>EcoCounterId</span> <span class='kw'>&lt;-</span> <span class='fl'>101020207</span>
+<span class='no'>EcoCounterId</span> <span class='kw'>&lt;-</span> <span class='fl'>100020207</span>
 <span class='no'>location</span> <span class='kw'>&lt;-</span> <span class='fu'>get_EcoCounter_location</span>(<span class='no'>EcoCounterId</span>)</div><span class='co'># NOT RUN {</span>
 <span class='fu'>library</span>(<span class='no'>leaflet</span>)
 <span class='fu'><a href='http://www.rdocumentation.org/packages/leaflet/topics/leaflet'>leaflet</a></span>(<span class='no'>location</span>) <span class='kw'>%&gt;%</span>

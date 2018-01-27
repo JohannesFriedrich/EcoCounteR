@@ -1,15 +1,15 @@
 #' Get location from an EcoCounter installation
 #'
-#' @param EcoCounterId [character] or [integer] (**requiered**): Id of the EcoCounter installation
-#' @return [data.frame] with parsed data from EcoCounter API. Coloumns: longitude, lattitude, name. This can be used
-#' as input in [leaflet::leaflet], see example.
+#' @param EcoCounterId [character] or [integer] (**required**): Id of the EcoCounter installation
+#' @return [data.frame] with parsed data from EcoCounter API. Coloumns: longitude, lattitude, name, id and idParent.
+#' This can be used as input in [leaflet::leaflet], see example.
 #'
 #' @section Function version 0.0.1
 #' @author Johannes Friedrich
 #'
 #' @examples
 #'
-#' EcoCounterId <- 101020207
+#' EcoCounterId <- 100020207
 #' location <- get_EcoCounter_location(EcoCounterId)
 #'
 #' \dontrun{
@@ -31,10 +31,10 @@ get_EcoCounter_location <- function(
   ##=======================================##
 
   if (missing(EcoCounterId))
-    stop("[get_EcoCounter_info()] Argument 'EcoCounterId' is missing", call. = FALSE)
+    stop("[get_EcoCounter_location()] Argument 'EcoCounterId' is missing", call. = FALSE)
 
-  if (!(class(unlist(EcoCounterId)) %in% c("character", "numeric")))
-    stop("[get_EcoCounter_info()] Argument 'EcoCounterId' has to be of class numeric or character", call. = FALSE)
+  if (!(class(EcoCounterId) %in% c("character", "numeric", "integer")))
+    stop("[get_EcoCounter_location()] Argument 'EcoCounterId' has to be of class numeric or character", call. = FALSE)
 
   ##=======================================##
   ## END ERROR HANDLING
@@ -47,8 +47,14 @@ get_EcoCounter_location <- function(
     longitude <- data$longitude
     latitude <- data$latitude
     name <- data$name
+    id <- data$id
+    idParent <- data$idParent
 
-    return(data.frame(long = longitude, lat = latitude, name = name))
+    return(data.frame(long = longitude,
+                      lat = latitude,
+                      name = name,
+                      id = id,
+                      idParent = idParent))
 
 
   })

@@ -7,7 +7,7 @@
 get_EcoCounter_info(EcoCounterId)
 }
 \arguments{
-\item{EcoCounterId}{\link{character} or \link{integer} (\strong{requiered}): Id of the EcoCounter installation}
+\item{EcoCounterId}{\link{character} or \link{integer} (\strong{required}): Id of the EcoCounter installation}
 }
 \value{
 \link{data.frame} with parsed data from EcoCounter API

@@ -7,7 +7,7 @@
 get_EcoCounter_data(EcoCounterId, from = NULL, to = NULL, step = 4)
 }
 \arguments{
-\item{EcoCounterId}{\link{character} or \link{integer} (\strong{requiered}): Id of the EcoCounter installation}
+\item{EcoCounterId}{\link{character} or \link{integer} (\strong{required}): Id of the EcoCounter installation}
 
 \item{from}{\link{character}: Start date (YYYYMMDD). If no date is submitted, the day before yesterday is
 automatically set.}

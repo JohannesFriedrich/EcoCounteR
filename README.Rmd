@@ -11,12 +11,12 @@ output: rmarkdown::github_document
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 
 
-
-```{r, echo = FALSE}
+```{r setup, include=FALSE, echo = FALSE}
 knitr::opts_chunk$set(collapse = TRUE,
                       comment = "##",
                       fig.retina = 2,
                       fig.path = "README_figs/README-")
+Sys.setlocale("LC_TIME", "C")
 ```
 
 ## Installation
@@ -36,9 +36,9 @@ The **R**-package *EcoCounteR* is an API wrapper for data collected by https://w
 
 Function name       | Description                                        | Example
 --------------------|----------------------------------------------------| -------
-get_EcoCounter_info | request common information about an installation  | get_EcoCounter_info(100020207)
-get_EcoCounter_location | request location of an installation  | get_EcoCounter_location(100020207)
-get_EcoCounter_data | request data from an installation  | get_EcoCounter_info(101020207)
+get_EcoCounter_info() | request common information about an installation  | get_EcoCounter_info(100020207)
+get_EcoCounter_location() | request location of an installation  | get_EcoCounter_location(100020207)
+get_EcoCounter_data() | request data from an installation  | get_EcoCounter_data(101020207)
 
 The following chapters show some examples how to use the **R**-package *EcoCounteR*.
 
@@ -136,10 +136,10 @@ Some examples:
 ## get daily saved data for the day before yesterday and yesterday
 get_EcoCounter_data(101020207)
 
-## get daily saved data from  1st January 2018 until yesterday |
+## get daily saved data from  1st January 2018 until yesterday 
 get_EcoCounter_data(101020207, from = "20180101")
 
-## get hourly saved data from  1st January 2018 to 10th January 2018 |
+## get hourly saved data from  1st January 2018 to 10th January 2018 
 get_EcoCounter_data(101020207, from = "20180101", to = "20180110", step = 3)
 ```
 
@@ -188,4 +188,31 @@ g2 <- g +
         axis.text.x = element_text(angle = 45, hjust = 1))
 
 plot(g2)
+```
+
+## A more comprehensive visualisation
+
+```{r}
+Stephan_Avenue_Ped_daily <- get_EcoCounter_data(Stephan_Avenue_Ped, 
+                                                from = "20141023", 
+                                                to = "20180125") %>% 
+  mutate(weekday = wday(date, label = TRUE),
+         week = week(date),
+         monthweek = ceiling(day(date) / 7),
+         year = year(date),
+         month = month(date, label = TRUE)) %>% 
+  na.omit()
+
+```
+
+
+```{r heatmap_Stephan_Avenue, fig.height=10, fig.width=10}
+ggplot(Stephan_Avenue_Ped_daily, aes(monthweek, weekday, fill = comptage)) + 
+  geom_tile(colour = "white") + 
+  facet_grid(year~month) + 
+  scale_fill_gradient(low = "yellow", high = "red") +
+  labs(x = "Week of Month",
+       y = "Day",
+       title = "Pedestrains at Stephan Avenue",
+       fill = "Pedestrains")
 ```

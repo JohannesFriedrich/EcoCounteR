@@ -1,6 +1,6 @@
 #' Get location from one EcoCounter installation
 #'
-#' @param EcoCounterId [character] or [integer] (**requiered**): Id of the EcoCounter installation
+#' @param EcoCounterId [character] or [integer] (**required**): Id of the EcoCounter installation
 #' @param from [character]: Start date (YYYYMMDD). If no date is submitted, the day before yesterday is
 #' automatically set.
 #' @param to [character]: End date (YYYYMMDD). If no date is submitted, yesterday is
@@ -35,14 +35,26 @@ get_EcoCounter_data <- function(
   if (missing(EcoCounterId))
     stop("[get_EcoCounter_data()] Argument 'EcoCounterId' is missing", call. = FALSE)
 
-  if (!(class(unlist(EcoCounterId)) %in% c("character", "numeric")))
+  if (!(class(unlist(EcoCounterId)) %in% c("character", "integer", "numeric")))
     stop("[get_EcoCounter_data()] Argument 'EcoCounterId' has to be of class numeric or character", call. = FALSE)
 
   if (!(step %in% seq(2,7)))
     stop("[get_EcoCounter_data()] Argument 'step' has to 2 (15 min), 3 (hourly), 4 (daily), 5 (weekly), 6 (monthly) or 7 (yearly)", call. = FALSE)
 
   if (class(step) != "numeric")
-    stop("[get_EcoCounter_data()] Argument 'step' has to be of class numeric)", call. = FALSE)
+    stop("[get_EcoCounter_data()] Argument 'step' has to be of class numeric", call. = FALSE)
+
+  if (!is.null(from) && class(from) != "character")
+    stop("[get_EcoCounter_data()] Argument 'from' has to be of class character", call. = FALSE)
+
+  if (!is.null(to) && class(to) != "character")
+    stop("[get_EcoCounter_data()] Argument 'to' has to be of class character", call. = FALSE)
+
+  if (!is.null(from) && length(unlist(strsplit(from, ""))) != 8)
+    stop("[get_EcoCounter_data()] Argument 'from' has to be in form 'YYYYMMDD'", call. = FALSE)
+
+  if (!is.null(to) && length(unlist(strsplit(to, ""))) != 8)
+    stop("[get_EcoCounter_data()] Argument 'to' has to be in form 'YYYYMMDD'", call. = FALSE)
 
   ##=======================================##
   ## END ERROR HANDLING
@@ -74,7 +86,6 @@ get_EcoCounter_data <- function(
       return(data)
     } else {
       return(NULL)
-
     }
   })
 
