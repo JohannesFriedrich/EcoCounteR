@@ -70,7 +70,11 @@
   </a>
 </li>
 <li>
-  <a href="../articles/Getting_started_with_the_R_package_EcoCounteR.html">Getting Started with the R-package EcoCounteR</a>
+  <a href="../articles/index.html">
+    <span class="fa fa-file-code-o"></span>
+     
+    Articles
+  </a>
 </li>
       </ul>
       
@@ -79,21 +83,21 @@
   <a href="../news/index.html">
     <span class="fa fa-newspaper-o"></span>
      
-    news
+    News
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
     <span class="fa fa-file-code-o"></span>
      
-    functions
+    Functions
   </a>
 </li>
 <li>
   <a href="https://github.com/JohannesFriedrich/EcoCounteR">
     <span class="fa fa-github fa-lg"></span>
      
-    github
+    GitHub
   </a>
 </li>
       </ul>
@@ -152,8 +156,8 @@ automatically set. Note: When date is the date of today, usually no data are ava
     <pre class="examples"><div class='input'>
 <span class='no'>EcoCounterId</span> <span class='kw'>&lt;-</span> <span class='fl'>101020207</span>
 <span class='fu'>get_EcoCounter_data</span>(<span class='no'>EcoCounterId</span>)</div><div class='output co'>#&gt;         date comptage        id
-#&gt; 1 2018-01-25    10944 101020207
-#&gt; 2 2018-01-26       NA 101020207</div><div class='input'>
+#&gt; 1 2018-01-30     9802 101020207
+#&gt; 2 2018-01-31     6111 101020207</div><div class='input'>
 <span class='co'>## set specific date and request weekly data (step = 5)</span>
 <span class='fu'>get_EcoCounter_data</span>(<span class='no'>EcoCounterId</span>, <span class='kw'>from</span> <span class='kw'>=</span> <span class='st'>"20171101"</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='st'>"20171201"</span>, <span class='kw'>step</span> <span class='kw'>=</span> <span class='fl'>5</span>)</div><div class='output co'>#&gt;         date comptage        id
 #&gt; 1 2017-11-01    33404 101020207

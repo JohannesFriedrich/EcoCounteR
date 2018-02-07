@@ -9,15 +9,17 @@ navbar:
   left:
     - icon: fa-home
       href: index.html
-    - text: Getting Started with the R-package EcoCounteR
-      href: articles/Getting_started_with_the_R_package_EcoCounteR.html
+    - icon: fa-file-code-o
+      text: "Articles"
+      href: articles/index.html
+
   right:
     - icon: fa-newspaper-o
-      text: "news"
+      text: "News"
       href: news/index.html
     - icon: fa-file-code-o
-      text: "functions"
+      text: "Functions"
       href: reference/index.html
     - icon: fa-github fa-lg
-      text: "github"
+      text: "GitHub"
       href: https://github.com/JohannesFriedrich/EcoCounteR

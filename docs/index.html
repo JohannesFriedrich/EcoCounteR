@@ -44,7 +44,11 @@
   </a>
 </li>
 <li>
-  <a href="articles/Getting_started_with_the_R_package_EcoCounteR.html">Getting Started with the R-package EcoCounteR</a>
+  <a href="articles/index.html">
+    <span class="fa fa-file-code-o"></span>
+     
+    Articles
+  </a>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -52,21 +56,21 @@
   <a href="news/index.html">
     <span class="fa fa-newspaper-o"></span>
      
-    news
+    News
   </a>
 </li>
 <li>
   <a href="reference/index.html">
     <span class="fa fa-file-code-o"></span>
      
-    functions
+    Functions
   </a>
 </li>
 <li>
   <a href="https://github.com/JohannesFriedrich/EcoCounteR">
     <span class="fa fa-github fa-lg"></span>
      
-    github
+    GitHub
   </a>
 </li>
       </ul>
@@ -96,7 +100,7 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>Until now the package is not in CRAN but you can download it via GitHub with the following command:</p>
+<p>Until now the package is not on CRAN but you can download it via GitHub with the following command:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="cf">if</span> (<span class="op">!</span><span class="kw">require</span>(<span class="st">"devtools"</span>))
   <span class="kw">install.packages</span>(<span class="st">"devtools"</span>)
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"JohannesFriedrich/EcoCounteR"</span>)</code></pre></div>
@@ -198,7 +202,7 @@ Z_103020207
 </table>
 <p>For later requests we need the coloumn <code>id</code> to get data from this specific installation.</p>
 <p>The function <code><a href="reference/get_EcoCounter_info.html">get_EcoCounter_info()</a></code> can also handle multiple EcoCounterIds, e.g.:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">EcoCounterIds =<span class="st"> </span><span class="kw">c</span>(<span class="dv">100020207</span>, <span class="dv">100017181</span>)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">EcoCounterIds &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">100020207</span>, <span class="dv">100017181</span>)
 
 info &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_EcoCounter_info.html">get_EcoCounter_info</a></span>(EcoCounterIds)</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">info</code></pre></div>
@@ -282,8 +286,8 @@ Z_OUT_102017181
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/leaflet/topics/addProviderTiles">addProviderTiles</a></span>(providers<span class="op">$</span>OpenStreetMap) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/leaflet/topics/map-layers">addTiles</a></span>() <span class="op">%&gt;%</span><span class="st">  </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/leaflet/topics/map-layers">addMarkers</a></span>(<span class="op">~</span>long, <span class="op">~</span>lat, <span class="dt">popup =</span> <span class="op">~</span>htmltools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/htmltools/topics/htmlEscape">htmlEscape</a></span>(name))</code></pre></div>
-<div id="htmlwidget-bf87cada08139a062850" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bf87cada08139a062850">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["OpenStreetMap",null,null,{"errorTileUrl":"","noWrap":false,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false}]},{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[51.045563,51.045563,51.045563],[-114.06445,-114.06445,-114.06445],null,null,null,{"clickable":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Stephen Avenue Pedestrian Counts","Stephen Avenue Cyclist Counts","Stephen Avenue Car Counts"],null,null,null,null,null,null]}],"limits":{"lat":[51.045563,51.045563],"lng":[-114.06445,-114.06445]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b4d7188c80a0ea06dd36" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b4d7188c80a0ea06dd36">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["OpenStreetMap",null,null,{"errorTileUrl":"","noWrap":false,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false}]},{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"maxNativeZoom":null,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"continuousWorld":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":null,"unloadInvisibleTiles":null,"updateWhenIdle":null,"detectRetina":false,"reuseTiles":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[[51.045563,51.045563,51.045563],[-114.06445,-114.06445,-114.06445],null,null,null,{"clickable":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Stephen Avenue Pedestrian Counts","Stephen Avenue Cyclist Counts","Stephen Avenue Car Counts"],null,null,null,null,null,null]}],"limits":{"lat":[51.045563,51.045563],"lng":[-114.06445,-114.06445]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <div id="request-data-from-eco-counter-api" class="section level2">
 <h2 class="hasAnchor">
@@ -335,19 +339,19 @@ Stephan_Avenue_Car &lt;-<span class="st"> </span><span class="dv">103020207</spa
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## get daily saved data for the day before yesterday and yesterday
 <span class="kw"><a href="reference/get_EcoCounter_data.html">get_EcoCounter_data</a></span>(<span class="dv">101020207</span>)
 
-## get daily saved data from  1st January 2018 until yesterday 
+## get daily saved data from 1st January 2018 until yesterday 
 <span class="kw"><a href="reference/get_EcoCounter_data.html">get_EcoCounter_data</a></span>(<span class="dv">101020207</span>, <span class="dt">from =</span> <span class="st">"20180101"</span>)
 
-## get hourly saved data from  1st January 2018 to 10th January 2018 
-<span class="kw"><a href="reference/get_EcoCounter_data.html">get_EcoCounter_data</a></span>(<span class="dv">101020207</span>, <span class="dt">from =</span> <span class="st">"20180101"</span>, <span class="dt">to =</span> <span class="st">"20180110"</span>, <span class="dt">step =</span> <span class="dv">3</span>)</code></pre></div>
+## get hourly saved data from 1st January 2018 to 31st January 2018 
+<span class="kw"><a href="reference/get_EcoCounter_data.html">get_EcoCounter_data</a></span>(<span class="dv">101020207</span>, <span class="dt">from =</span> <span class="st">"20180101"</span>, <span class="dt">to =</span> <span class="st">"20180131"</span>, <span class="dt">step =</span> <span class="dv">3</span>)</code></pre></div>
 <p>Now let’s put things into practical terms. We request data from 1st to 20th January 2018. With <code><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate(Type = XXX)</a></code> we add a new coloum to the data.frame with the specific type of request.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Stephan_Avenue_Ped_daily &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_EcoCounter_data.html">get_EcoCounter_data</a></span>(Stephan_Avenue_Ped, <span class="dt">from =</span> <span class="st">"20180101"</span>, <span class="dt">to =</span> <span class="st">"20180120"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Stephan_Avenue_Ped_daily &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_EcoCounter_data.html">get_EcoCounter_data</a></span>(Stephan_Avenue_Ped, <span class="dt">from =</span> <span class="st">"20180101"</span>, <span class="dt">to =</span> <span class="st">"20180131"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">Type =</span> <span class="st">"Pedestrains"</span>)
 
-Stephan_Avenue_Bike_daily &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_EcoCounter_data.html">get_EcoCounter_data</a></span>(Stephan_Avenue_Bike, <span class="dt">from =</span> <span class="st">"20180101"</span>, <span class="dt">to =</span> <span class="st">"20180120"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+Stephan_Avenue_Bike_daily &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_EcoCounter_data.html">get_EcoCounter_data</a></span>(Stephan_Avenue_Bike, <span class="dt">from =</span> <span class="st">"20180101"</span>, <span class="dt">to =</span> <span class="st">"20180131"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">Type =</span> <span class="st">"Bikes"</span>)
 
-Stephan_Avenue_Car_daily &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_EcoCounter_data.html">get_EcoCounter_data</a></span>(Stephan_Avenue_Car, <span class="dt">from =</span> <span class="st">"20180101"</span>, <span class="dt">to =</span> <span class="st">"20180120"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+Stephan_Avenue_Car_daily &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_EcoCounter_data.html">get_EcoCounter_data</a></span>(Stephan_Avenue_Car, <span class="dt">from =</span> <span class="st">"20180101"</span>, <span class="dt">to =</span> <span class="st">"20180131"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">Type =</span> <span class="st">"Cars"</span>)
 
 Stephen_Avenue_complete &lt;-<span class="st"> </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/bind.html">bind_rows</a></span>(Stephan_Avenue_Ped_daily, Stephan_Avenue_Bike_daily, Stephan_Avenue_Car_daily)</code></pre></div>
@@ -361,7 +365,7 @@ Stephen_Avenue_complete &lt;-<span class="st"> </span><span class="kw"><a href="
 ##   &lt;dttm&gt;                 &lt;int&gt;     &lt;dbl&gt; &lt;chr&gt;      
 ## 1 2018-01-19 00:00:00    13436 101020207 Pedestrains
 ## 2 2018-01-19 00:00:00      532 102020207 Bikes      
-## 3 2018-01-20 00:00:00     2223 103020207 Cars</code></pre></div>
+## 3 2018-01-27 00:00:00     2349 103020207 Cars</code></pre></div>
 </div>
 <div id="visualise-data" class="section level2">
 <h2 class="hasAnchor">
@@ -374,31 +378,34 @@ Stephen_Avenue_complete &lt;-<span class="st"> </span><span class="kw"><a href="
         <span class="dt">axis.text.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_text</a></span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))
 
 <span class="kw">plot</span>(g)</code></pre></div>
-<p><img src="README_figs/README-plot_Stephen_Avenue-1.png" width="672"></p>
+<p><img src="README_figs/README-plot_Stephen_Avenue-1.png" width="672" style="display: block; margin: auto;"></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
 g2 &lt;-<span class="st"> </span>g <span class="op">+</span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_date">scale_x_datetime</a></span>(<span class="dt">labels =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/scales/topics/date_format">date_format</a></span>(<span class="st">"%d.%m.%Y"</span>)) <span class="op">+</span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/facet_wrap">facet_wrap</a></span>(<span class="op">~</span>Type, <span class="dt">scales =</span> <span class="st">"free_y"</span>) <span class="op">+</span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_smooth">geom_smooth</a></span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/theme">theme</a></span>(<span class="dt">legend.position =</span> <span class="st">"bottom"</span>,
-        <span class="dt">axis.text.x =</span> <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/element">element_text</a></span>(<span class="dt">angle =</span> <span class="dv">45</span>, <span class="dt">hjust =</span> <span class="dv">1</span>))
+<span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_smooth">geom_smooth</a></span>(<span class="dt">show.legend =</span> <span class="ot">FALSE</span>)
 
 <span class="kw">plot</span>(g2)</code></pre></div>
-<p><img src="README_figs/README-plot_Stephen_Avenue-2.png" width="672"></p>
+<p><img src="README_figs/README-plot_Stephen_Avenue-2.png" width="672" style="display: block; margin: auto;"></p>
 </div>
 <div id="a-more-comprehensive-visualisation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#a-more-comprehensive-visualisation" class="anchor"></a>A more comprehensive visualisation</h2>
+<p>We load all available data with the best resolution (every 15 min: <code>step = 2</code>). Afterwars an animated heatmap is created with the <strong>R</strong>-package <a href="https://github.com/dgrtwo/gganimate">gganimate</a>. Here you see the code for creating such plots. Note that saving/displaying the results can take longt time. I prefer to render as <code>mp4</code>, but for this README a <code>gif</code> file was created.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Stephan_Avenue_Ped_daily &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_EcoCounter_data.html">get_EcoCounter_data</a></span>(Stephan_Avenue_Ped, 
                                                 <span class="dt">from =</span> <span class="st">"20141023"</span>, 
-                                                <span class="dt">to =</span> <span class="st">"20180125"</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+                                                <span class="dt">to =</span> <span class="st">"20180131"</span>, 
+                                                <span class="dt">step =</span> <span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span>(<span class="dt">weekday =</span> <span class="kw">wday</span>(date, <span class="dt">label =</span> <span class="ot">TRUE</span>),
          <span class="dt">week =</span> <span class="kw">week</span>(date),
+         <span class="dt">day =</span> <span class="kw">day</span>(date),
          <span class="dt">monthweek =</span> <span class="kw">ceiling</span>(<span class="kw">day</span>(date) <span class="op">/</span><span class="st"> </span><span class="dv">7</span>),
+         <span class="dt">month =</span> <span class="kw">month</span>(date, <span class="dt">label =</span> <span class="ot">TRUE</span>),
          <span class="dt">year =</span> <span class="kw">year</span>(date),
-         <span class="dt">month =</span> <span class="kw">month</span>(date, <span class="dt">label =</span> <span class="ot">TRUE</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+         <span class="dt">hour =</span> <span class="kw">hour</span>(date),
+         <span class="dt">minute =</span> <span class="kw">minute</span>(date),
+         <span class="dt">time =</span> <span class="kw">strftime</span>(date, <span class="dt">format =</span> <span class="st">"%H:%M"</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">na.omit</span>()</code></pre></div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(Stephan_Avenue_Ped_daily, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(monthweek, weekday, <span class="dt">fill =</span> comptage)) <span class="op">+</span><span class="st"> </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">g &lt;-<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/ggplot">ggplot</a></span>(Stephan_Avenue_Ped_daily, <span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/aes">aes</a></span>(monthweek, weekday, <span class="dt">fill =</span> comptage, <span class="dt">frame =</span> time)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/geom_tile">geom_tile</a></span>(<span class="dt">colour =</span> <span class="st">"white"</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/facet_grid">facet_grid</a></span>(year<span class="op">~</span>month) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="http://www.rdocumentation.org/packages/ggplot2/topics/scale_gradient">scale_fill_gradient</a></span>(<span class="dt">low =</span> <span class="st">"yellow"</span>, <span class="dt">high =</span> <span class="st">"red"</span>) <span class="op">+</span>
@@ -406,7 +413,15 @@ g2 &lt;-<span class="st"> </span>g <span class="op">+</span>
        <span class="dt">y =</span> <span class="st">"Day"</span>,
        <span class="dt">title =</span> <span class="st">"Pedestrains at Stephan Avenue"</span>,
        <span class="dt">fill =</span> <span class="st">"Pedestrains"</span>)</code></pre></div>
-<p><img src="README_figs/README-heatmap_Stephan_Avenue-1.png" width="960"></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(gganimate)
+
+## note: This process can take a long time!
+<span class="kw"><a href="http://www.rdocumentation.org/packages/gganimate/topics/gganimate">gganimate</a></span>(g, <span class="dt">interval =</span> <span class="fl">0.25</span>, <span class="dt">filename =</span> <span class="st">"Pedestrains_Stephan_Avenue.gif"</span>)</code></pre></div>
+<p><img src="README_figs/Pedestrains_Stephan_Avenue.gif" width="960"></p>
+</div>
+<div id="related-projects" class="section level2">
+<h2 class="hasAnchor">
+<a href="#related-projects" class="anchor"></a>Related projects</h2>
 </div>
 </div>
 </div>

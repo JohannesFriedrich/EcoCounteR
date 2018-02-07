@@ -35,8 +35,7 @@ get_EcoCounter_info <- function(
   results <- lapply(EcoCounterId, function(x){
 
     create_request(EcoCounterId = x,
-                   path = c("counter", "channels"),
-                   API_key = "cw6Xk4jW4X4R")
+                   path = c("counter", "channels"))
   })
 
   results <- do.call(rbind, results)

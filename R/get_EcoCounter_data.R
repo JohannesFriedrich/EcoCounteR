@@ -70,6 +70,10 @@ get_EcoCounter_data <- function(
     to <- strftime(to, format = "%Y%m%d")
   }
 
+  if (class(EcoCounterId) == "data.frame") {
+    EcoCounterId <- unname(unlist(EcoCounterId))
+  }
+
   query <- list(
     begin = from,
     end = to,
@@ -82,7 +86,7 @@ get_EcoCounter_data <- function(
                            query = query)
 
     if (!is.null(data)) {
-      data$id <- x
+      data$id <- as.factor(x)
       return(data)
     } else {
       return(NULL)

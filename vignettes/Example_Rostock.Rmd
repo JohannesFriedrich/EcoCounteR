@@ -70,11 +70,12 @@ Am_Strande_monthly <-
 Am_Strande_complete %>%
   mutate(weekday = wday(date, label = TRUE),
          year = year(date),
-         month = month(date, label = TRUE))
+         month = month(date, label = TRUE)) %>% 
+  na.omit()
 
 ggplot(Am_Strande_monthly, aes(x = month, y = comptage, fill = Type)) +
   geom_bar(stat = "identity", position = "dodge") +
-  facet_wrap( ~year) +
+  facet_wrap(~year) +
   theme(legend.position = "bottom",
         axis.text.x = element_text(angle = 45, hjust = 1)) +
   xlab("Month") + 
