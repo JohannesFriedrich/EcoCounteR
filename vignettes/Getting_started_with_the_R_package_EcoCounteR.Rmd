@@ -185,7 +185,7 @@ plot(g2)
 ```{r}
 Stephan_Avenue_Ped_daily <- get_EcoCounter_data(Stephan_Avenue_Ped, 
                                                 from = "20141023", 
-                                                to = "20180125") %>% 
+                                                to = "20180901") %>% 
   mutate(weekday = wday(date, label = TRUE),
          week = week(date),
          monthweek = ceiling(day(date) / 7),
