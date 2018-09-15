@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/index.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/EcoCounteR-package.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/create_request.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_EcoCounter_data.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_EcoCounter_info.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/reference/get_EcoCounter_location.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/articles/Example_Rostock.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/JohannesFriedrich/EcoCounteR/articles/Getting_started_with_the_R_package_EcoCounteR.html</loc>
+  </url>
+</urlset>
