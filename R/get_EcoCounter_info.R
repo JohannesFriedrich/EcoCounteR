@@ -1,14 +1,15 @@
 #' Get specific information from one EcoCounter installation
 #'
-#' @param EcoCounterId [character] or [integer] (**required**): Id of the EcoCounter installation
+#' @param EcoCounterId [character] or [integer] or [vector] of [character] or [integer](**required**):
+#' Id of the EcoCounter installation
 #' @return [data.frame] with parsed data from EcoCounter API
 #'
-#' @section Function version 0.0.1
+#' @section Function version: 0.0.1
 #' @author Johannes Friedrich
 #'
 #' @examples
 #'
-#' EcoCounterId <- 100020207
+#' EcoCounterId <- 100037011
 #' get_EcoCounter_info(EcoCounterId)
 #'
 #' @md

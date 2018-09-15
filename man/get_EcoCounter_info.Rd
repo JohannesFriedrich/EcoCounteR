@@ -7,7 +7,8 @@
 get_EcoCounter_info(EcoCounterId)
 }
 \arguments{
-\item{EcoCounterId}{\link{character} or \link{integer} (\strong{required}): Id of the EcoCounter installation}
+\item{EcoCounterId}{\link{character} or \link{integer} or \link{vector} of \link{character} or \href{**required**}{integer}:
+Id of the EcoCounter installation}
 }
 \value{
 \link{data.frame} with parsed data from EcoCounter API
@@ -15,13 +16,13 @@ get_EcoCounter_info(EcoCounterId)
 \description{
 Get specific information from one EcoCounter installation
 }
-\section{Function version 0.0.1}{
-NA
+\section{Function version}{
+ 0.0.1
 }
 
 \examples{
 
-EcoCounterId <- 100020207
+EcoCounterId <- 100037011
 get_EcoCounter_info(EcoCounterId)
 
 }

@@ -1,15 +1,17 @@
 #' Get location from an EcoCounter installation
 #'
-#' @param EcoCounterId [character] or [integer] (**required**): Id of the EcoCounter installation
-#' @return [data.frame] with parsed data from EcoCounter API. Coloumns: longitude, lattitude, name, id and idParent.
+#' @param EcoCounterId [character] or [integer] or [vector] of [character] or [integer](**required**):
+#' Id of the EcoCounter installation
+#' @return [data.frame] with parsed data from EcoCounter API.
+#' Coloumns: longitude, lattitude, name, id and idParent.
 #' This can be used as input in [leaflet::leaflet], see example.
 #'
-#' @section Function version 0.0.1
+#' @section Function version: 0.0.1
 #' @author Johannes Friedrich
 #'
 #' @examples
 #'
-#' EcoCounterId <- 100020207
+#' EcoCounterId <- 100037011
 #' location <- get_EcoCounter_location(EcoCounterId)
 #'
 #' \dontrun{

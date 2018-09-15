@@ -1,19 +1,20 @@
 #' Get location from one EcoCounter installation
 #'
-#' @param EcoCounterId [character] or [integer] (**required**): Id of the EcoCounter installation
-#' @param from [character]: Start date (YYYYMMDD). If no date is submitted, the day before yesterday is
+#' @param EcoCounterId [character] or [integer] or [vector] of [character] or [integer](**required**):
+#' Id of the EcoCounter installation
+#' @param from [character](**optional**): Start date (YYYYMMDD). If no date is submitted, the day before yesterday is
 #' automatically set.
-#' @param to [character]: End date (YYYYMMDD). If no date is submitted, yesterday is
+#' @param to [character](**optional**): End date (YYYYMMDD). If no date is submitted, yesterday is
 #' automatically set. Note: When date is the date of today, usually no data are available.
-#' @param step [integer] or [character]: Get data : 2 (15 min), 3 (hourly), 4 (daily), 5 (weekly), 6 (monthly), 7 (yearly). With default: 4.
+#' @param step [integer](**optional**): Get data : 2 (15 min), 3 (hourly), 4 (daily), 5 (weekly), 6 (monthly), 7 (yearly). With default: 4.
 #' @return [data.frame] with parsed data from EcoCounter API
 #'
-#' @section Function version 0.0.1
+#' @section Function version: 0.0.1
 #' @author Johannes Friedrich
 #'
 #' @examples
 #'
-#' EcoCounterId <- 101020207
+#' EcoCounterId <- 100037011
 #' get_EcoCounter_data(EcoCounterId)
 #'
 #' ## set specific date and request weekly data (step = 5)

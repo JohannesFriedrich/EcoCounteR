@@ -197,7 +197,7 @@ Afterwars an animated heatmap is created with the **R**-package [gganimate](http
 ```{r}
 Stephan_Avenue_Ped_daily <- get_EcoCounter_data(Stephan_Avenue_Ped, 
                                                 from = "20141023", 
-                                                to = "20180131", 
+                                                to = "20180831", 
                                                 step = 2) %>% 
   mutate(weekday = wday(date, label = TRUE),
          week = week(date),

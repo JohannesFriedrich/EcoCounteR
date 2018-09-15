@@ -7,15 +7,16 @@
 get_EcoCounter_data(EcoCounterId, from = NULL, to = NULL, step = 4)
 }
 \arguments{
-\item{EcoCounterId}{\link{character} or \link{integer} (\strong{required}): Id of the EcoCounter installation}
+\item{EcoCounterId}{\link{character} or \link{integer} or \link{vector} of \link{character} or \href{**required**}{integer}:
+Id of the EcoCounter installation}
 
-\item{from}{\link{character}: Start date (YYYYMMDD). If no date is submitted, the day before yesterday is
+\item{from}{\href{**optional**}{character}: Start date (YYYYMMDD). If no date is submitted, the day before yesterday is
 automatically set.}
 
-\item{to}{\link{character}: End date (YYYYMMDD). If no date is submitted, yesterday is
+\item{to}{\href{**optional**}{character}: End date (YYYYMMDD). If no date is submitted, yesterday is
 automatically set. Note: When date is the date of today, usually no data are available.}
 
-\item{step}{\link{integer} or \link{character}: Get data : 2 (15 min), 3 (hourly), 4 (daily), 5 (weekly), 6 (monthly), 7 (yearly). With default: 4.}
+\item{step}{\href{**optional**}{integer}: Get data : 2 (15 min), 3 (hourly), 4 (daily), 5 (weekly), 6 (monthly), 7 (yearly). With default: 4.}
 }
 \value{
 \link{data.frame} with parsed data from EcoCounter API
@@ -23,13 +24,13 @@ automatically set. Note: When date is the date of today, usually no data are ava
 \description{
 Get location from one EcoCounter installation
 }
-\section{Function version 0.0.1}{
-NA
+\section{Function version}{
+ 0.0.1
 }
 
 \examples{
 
-EcoCounterId <- 101020207
+EcoCounterId <- 100037011
 get_EcoCounter_data(EcoCounterId)
 
 ## set specific date and request weekly data (step = 5)
