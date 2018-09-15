@@ -4,3 +4,4 @@
 .Ruserdata
 *.csv
 Auswertungen_Mining
+*.DS_Store
