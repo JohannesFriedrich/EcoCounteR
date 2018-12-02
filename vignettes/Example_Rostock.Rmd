@@ -57,9 +57,9 @@ leaflet(locations) %>%
 # Load data for bicycles
 
 ```{r}
-Am_Strande_IN_complete <- get_EcoCounter_data(101005395, from = "20130620", step = 4) %>% 
+Am_Strande_IN_complete <- get_EcoCounter_data(101005395, from = "20130701", to = "20180831", step = 6) %>% 
   mutate(Type = "IN")
-Am_Strande_OUT_complete <- get_EcoCounter_data(102005395, from = "20130620", step = 4) %>% 
+Am_Strande_OUT_complete <- get_EcoCounter_data(102005395, from = "20130701", to = "20180831", step = 6) %>% 
   mutate(Type = "OUT")
 
 Am_Strande_complete <- bind_rows(Am_Strande_IN_complete, Am_Strande_OUT_complete) 
@@ -82,4 +82,13 @@ ggplot(Am_Strande_monthly, aes(x = month, y = comptage, fill = Type)) +
   ylab("Amount")
 ```
 
+## Look into details
+
+```{r}
+Am_Strande_OUT_detail <- get_EcoCounter_data(102005395, from = "20160701", step = 3)
+
+Am_Strande_OUT_detail %>% 
+  top_n(10, comptage) %>% 
+  arrange(desc(comptage))
+```
 
