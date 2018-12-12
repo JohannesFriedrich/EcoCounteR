@@ -460,15 +460,16 @@ plot(g2)
 
 We load all available data with the best resolution (every 15 min: `step
 = 2`). Afterwars an animated heatmap is created with the **R**-package
-[gganimate](https://github.com/dgrtwo/gganimate). Here you see the code
-for creating such plots. Note that saving/displaying the results can
-take longt time. I prefer to render as `mp4`, but for this README a
-`gif` file was created.
+[gganimate](https://github.com/dgrtwo/gganimate) (**Note**: the synatx
+presented below is deprecated because the package architecture
+changed\!). Here you see the code for creating such plots. Note that
+saving/displaying the results can take longt time. I prefer to render as
+`mp4`, but for this README a `gif` file was created.
 
 ``` r
 Stephan_Avenue_Ped_daily <- get_EcoCounter_data(Stephan_Avenue_Ped, 
                                                 from = "20141023", 
-                                                to = "20181131", 
+                                                to = "20181210", 
                                                 step = 2) %>% 
   mutate(weekday = wday(date, label = TRUE),
          week = week(date),
@@ -486,7 +487,7 @@ Stephan_Avenue_Ped_daily <- get_EcoCounter_data(Stephan_Avenue_Ped,
 g <- ggplot(Stephan_Avenue_Ped_daily, aes(monthweek, weekday, fill = comptage, frame = time)) + 
   geom_tile(colour = "white") + 
   facet_grid(year~month) + 
-  scale_fill_gradient(low = "yellow", high = "red") +
+  scale_fill_gradient(low = "white", high = "red") +
   labs(x = "Week of Month",
        y = "Day",
        title = "Pedestrains at Stephan Avenue",
